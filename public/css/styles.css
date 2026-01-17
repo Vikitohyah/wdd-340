@@ -49,34 +49,36 @@ h1, h2, h3 {
   border-bottom: 2px solid var(--color-brand);
   font-weight: bold;
 
-  & a {
-    text-decoration: none;
-    color: var(--color-brand);
-    transition: background-color 0.3s;
-    &:hover {
-      background-color: var(--color-brand-hover);
-      padding: 5px;
-    }
+}
 
-    &.active {
-      font-weight: bold;
-      border-bottom: 2px solid var(--color-brand);
-    }
-
-    &:active {
-      text-decoration: underline;
-    }
-  }
-
-  & .siteName {
-    font-size: 2rem;
-  }
-
-  & #tools a {
-    color: var(--color-brand-hover);
-  }
+#top-header a {
+  text-decoration: none;
+  color: var(--color-brand);
+  transition: background-color 0.3s;
 
 }
+
+a:hover {
+  background-color: var(--color-brand-hover);
+  padding: 5px;
+}
+
+a.active {
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-brand);
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+#top-header .siteName {
+  font-size: 2rem;
+}
+
+#top-header #tools a {
+    color: var(--color-brand-hover);
+  }
 
 /* Navigation */
 nav{
@@ -84,14 +86,15 @@ nav{
   color: var(--color-nav-text);
   padding: 1rem 0;
 
-  & ul{
-    display: flex;
-    justify-content: space-around;
+}
 
-    & li{
-      list-style: none;
-    }
-  }
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  list-style: none;
 }
 
 /* Hero Page */
@@ -104,12 +107,12 @@ nav{
 .hero-image{
   display: flex;
   justify-content: center;
+}
 
-  & img{
-    width: 100%;
-    height: auto;
-    width: 350px;
-  }
+.hero-image img {
+  width: 100%;
+  height: auto;
+  width: 350px;
 }
 
 .hero-box{
@@ -118,20 +121,20 @@ nav{
   max-width: 125px;
   color: #00aeea;
   background: rgba(255, 255, 255, 0.832);
+}
 
-  & img{
-    width: 100%;
-    height: auto;
-    max-width: 95px;
-  }
+.hero-box img{
+  width: 100%;
+  height: auto;
+  max-width: 95px;
+}
 
-  & h2{
-    font-size: 1.1rem;
-  }
+.hero-box h2{
+  font-size: 1.1rem;
+}
 
-  & p{
-    font-size: 15px;
-  }
+.hero-box p {
+  font-size: 15px;
 }
 
 /* Upgrade & Review */
@@ -140,46 +143,47 @@ nav{
   flex-direction: column-reverse;
   margin: 1rem 0;
   gap: 10px;
+}
 
-  & h2 {
-    margin: 1rem 0;
-  }
+.review-upgrade h2 {
+  margin: 1rem 0;
 }
 
 .upgrades{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
 
-  & .upgrade-item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 0;
+.upgrades .upgrade-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
 
-    & .upgrade-image {
-      max-width: 180px;
-      width: 100%;
-      background-color: #00aeea;
-      text-align: center;
-      padding: 0.5rem 0;
-      border: solid 1px #151515;
+.upgrade-item .upgrade-image {
+  max-width: 180px;
+  width: 100%;
+  background-color: #00aeea;
+  text-align: center;
+  padding: 0.5rem 0;
+  border: solid 1px #151515;
+}
 
-      & img{
-        width: 100%;
-        height: 65px;
-        max-width: 65px;
-      }
-    }
-  }
+.upgrade-item .upgrade-image img{
+  width: 100%;
+  height: 65px;
+  max-width: 65px;
 }
 
 .review-list li{
   margin-bottom: 15px;
   list-style: none;
-  & .dot-symbol {
-    font-size: 10px;
-  }
+}
+
+.review-list li .dot-symbol {
+  font-size: 10px;
 }
 
 .copyright {
@@ -200,18 +204,19 @@ nav{
     left: 18%;
     max-width: 300px;
 
-    & img{
-      max-width: 180px;
-      padding: 1rem 0;
-    }
+  }
 
-    & h2{
-      font-size: 2rem;
-    }
+  .hero-box img{
+    max-width: 180px;
+    padding: 1rem 0;
+  }
 
-    & p{
-      font-size: 20px;
-    }
+  .hero-box h2{
+    font-size: 2rem;
+  }
+
+  .hero-box p{
+    font-size: 20px;
   }
 
   .review-upgrade {
