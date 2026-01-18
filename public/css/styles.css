@@ -193,6 +193,17 @@ nav ul li {
 
 @media screen and (min-width: 600px){
 
+  html {
+    background-image: url(/images/site/small_check.jpg);
+    padding: 10px 5rem;
+  }
+
+  body {
+    background-color: var(--color-nav-text);
+    border: 5px solid #00aeea;
+    border-radius: 10px;
+  }
+
   .hero-image img{
     width: 100%;
     height: auto;
