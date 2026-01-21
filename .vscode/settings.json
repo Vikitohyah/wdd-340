@@ -10,8 +10,8 @@
             "previewLimit": 50,
             "server": "localhost",
             "driver": "PostgreSQL",
-            "name": "render",
-            "connectString": "postgresql://wdd340ve:hymGibl5tFR5vsg6tJMkZnNZBzpPuUgd@dpg-d5jojaogjchc739jnpqg-a.virginia-postgres.render.com/wdd340ve"
+            "name": "Render",
+            "connectString": "postgresql://wdd340vge:qatYnvLKxOO3PYHybiZ3cK5eHm7QSjAY@dpg-d5na7ncmrvns73fkmk80-a.virginia-postgres.render.com/wdd340vge"
         }
     ]
 }
