@@ -58,7 +58,7 @@ h1, h2, h3 {
 
 }
 
-a:hover {
+#top-header a:hover, nav a:hover {
   background-color: var(--color-brand-hover);
   padding: 5px;
 }
@@ -77,13 +77,12 @@ a:active {
 }
 
 #top-header #tools a {
-    color: var(--color-brand-hover);
-  }
+  color: var(--color-brand-hover);
+}
 
 /* Navigation */
 nav{
   background: var(--color-nav-bg);
-  color: var(--color-nav-text);
   padding: 1rem 0;
 
 }
@@ -95,6 +94,11 @@ nav ul {
 
 nav ul li {
   list-style: none;
+}
+
+nav ul li a{
+  color: var(--color-nav-text);
+  text-decoration: none;
 }
 
 /* Hero Page */
