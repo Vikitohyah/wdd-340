@@ -202,6 +202,7 @@ footer {
 
 .vehicle-images{
   background-color: var(--color-brand-hover);
+  color: var(--color-nav-text);
 }
 
 .mileage-box{

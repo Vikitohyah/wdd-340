@@ -68,7 +68,7 @@ Util.buildVehicleDetailPage = async function(vehicle){
           <p class="vehicle-des">
             ${vehicle.inv_description}
           </p>
-          <img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" width="500" height="330" loading="lazy">>
+          <img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" width="500" height="330" loading="lazy">
         </div>
 
         <div class="thumb">
@@ -89,10 +89,10 @@ Util.buildVehicleDetailPage = async function(vehicle){
             <p> ${vehicle.inv_miles} </p>
           </div>
 
-          <p class="big-text"> NO-Haggle Price </p>
+          <h3 class="big-text"> NO-Haggle Price </h3>
           
           <div class="vehicle-pay">
-            <p class="big-text"> $${new Intl.NumberFormat("en-US").format(vehicle.inv_price)}</p>
+            <h3 class="big-text"> $${new Intl.NumberFormat("en-US").format(vehicle.inv_price)}</h3>
             <p class="small-text"> Does not include $299 Order Delivery Fee.</p>
             <p class="medium-text red-text"> ESTIMATE PAYMENTS </p>
           </div>
