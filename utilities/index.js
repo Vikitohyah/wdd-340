@@ -68,13 +68,13 @@ Util.buildVehicleDetailPage = async function(vehicle){
           <p class="vehicle-des">
             ${vehicle.inv_description}
           </p>
-          <img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" width="500" height="330" loading="lazy">
+          <img src="${vehicle.inv_image}" alt="${vehicle.inv_make} ${vehicle.inv_model}" width="500" height="330" loading="lazy">
         </div>
 
         <div class="thumb">
-          <img src="${vehicle.inv_thumbnail}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" width="85" height="85" loading="lazy">
-          <img src="${vehicle.inv_thumbnail}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" width="85" height="85" loading="lazy">
-          <img src="${vehicle.inv_thumbnail}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}" width="85" height="85" loading="lazy">
+          <img src="${vehicle.inv_thumbnail}" alt="${vehicle.inv_make} ${vehicle.inv_model}" width="85" height="85" loading="lazy">
+          <img src="${vehicle.inv_thumbnail}" alt="${vehicle.inv_make} ${vehicle.inv_model}" width="85" height="85" loading="lazy">
+          <img src="${vehicle.inv_thumbnail}" alt="${vehicle.inv_make} ${vehicle.inv_model}" width="85" height="85" loading="lazy">
         </div>
       </div>
       
@@ -86,13 +86,13 @@ Util.buildVehicleDetailPage = async function(vehicle){
         <div class="vehicle-header">
           <div class="mileage-box">
             <p class="miles"> MILEAGE</p>
-            <p> ${vehicle.inv_miles} </p>
+            <p> ${new Intl.NumberFormat("en-US").format(vehicle.inv_miles)} </p>
           </div>
 
-          <h3 class="big-text"> NO-Haggle Price </h3>
+          <h2> NO-Haggle Price </h2>
           
           <div class="vehicle-pay">
-            <h3 class="big-text"> $${new Intl.NumberFormat("en-US").format(vehicle.inv_price)}</h3>
+            <h2> $${new Intl.NumberFormat("en-US").format(vehicle.inv_price)}</h2>
             <p class="small-text"> Does not include $299 Order Delivery Fee.</p>
             <p class="medium-text red-text"> ESTIMATE PAYMENTS </p>
           </div>
