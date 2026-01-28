@@ -29,12 +29,6 @@ app.use(static)
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
 
-//Index route
-app.get("/", function(req, res){
-  res.render("index", {title: "Home"})
-})
-
-
 // Inventory routes
 app.use("/inv", inventoryRoute)
 

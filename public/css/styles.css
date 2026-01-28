@@ -190,7 +190,124 @@ nav ul li a{
   font-size: 10px;
 }
 
+footer {
+  margin-top: 2rem;
+  border-top: solid 2px var(--color-brand);
+}
+
 .copyright {
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.vehicle-images{
+  background-color: var(--color-brand-hover);
+}
+
+.mileage-box{
+  text-align: center;
+  padding: 10px;
+  margin-right: 3px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.832);
+}
+
+.miles {
+  background-color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.vehicle-detail, .vehicle-feat, .info-button{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.vehicle-pay {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.vehicle-pay .small-text{
+  font-size: 8px;
+}
+
+.big-text {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.medium-text {
+  font-size: 8px;
+}
+
+.vehicle-header{
+  display: flex;
+  justify-content: space-between;
+  background-color: azure;
+  margin: 1rem 0;
+  align-content: center;
+  padding: 2rem 1rem;
+  text-align: right;
+  font-weight: bold;
+}
+.vehicle-detail{
+  padding: 1rem;
+}
+
+.vehicle-image-info{
+  margin-bottom: 1rem;
+}
+
+.vehicle-images img{
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+  margin-bottom: 1rem;
+}
+.thumb img{
+  width: 100%;
+  height: auto;
+  max-width: 85px;
+}
+
+.info-button{
+  margin-top: 1rem;
+}
+.info-button button{
+  padding: 10px;
+  background-color: azure;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.info-button button:nth-child(1){
+  background-color: var(--color-brand-hover);
+  color: var(--color-nav-text);
+}
+
+.vehicle-des{
+  background-color: var(--color-nav-bg);
+  color: var(--color-nav-text);
+  padding: 1rem;
+}
+
+.thumb{
+  margin-top: 1rem;
+}
+
+.thumb img:nth-child(2){
+  transform: scaleX(-1);
+}
+
+.red-text{
+  color: #9c0000;
   font-weight: bold;
 }
 
@@ -234,13 +351,50 @@ nav ul li a{
     font-size: 20px;
   }
 
-  .review-upgrade {
+  .review-upgrade, .vehicle-detail, .vehicle-info-table {
     display: grid;
     grid-template-columns: 1fr 1fr;
     flex-direction: row;
+    gap: 2rem;
   }
 
   .upgrades .upgrade-item .upgrade-image {
     max-width: 250px;
+  }
+
+  .vehicle-images img{
+    max-width: 600px;
+  }
+
+  .vehicle-pay{
+    gap: 10px;
+  }
+
+  .vehicle-pay .small-text{
+    font-size: 11px;
+  }
+
+  .big-text {
+    font-size: 1.3rem;
+  }
+
+  .medium-text {
+    font-size: medium;
+  }
+
+  .mileage-box{
+    font-size: medium;
+  }
+
+  .miles {
+    letter-spacing: 3px;
+  }
+
+  .thumb img{
+    max-width: 176px;
+  }
+
+  .vehicle-image-info{
+    margin-bottom: 0;
   }
 }
