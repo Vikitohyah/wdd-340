@@ -70,14 +70,12 @@ validate.InventoryRules = () => {
     // lastname is required and must be string
     body("inv_image")
       .trim()
-      .escape()
       .notEmpty()
       .isLength({ min: 2 })
       .withMessage("Please provide a valid image path."), // on error this message is sent.
 
     body("inv_thumbnail")
       .trim()
-      .escape()
       .notEmpty()
       .isLength({ min: 2 })
       .withMessage("Please provide a valid thumbnail path."), // on error this message is sent.
