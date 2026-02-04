@@ -12,6 +12,7 @@
   --color-nav-bg: #151515;
   --color-nav-text: #ffffff;
   --font-body: "Montserrat", "Times New Roman", serif;
+  --mng-color: #0041C7;
 }
 
 /* ========== GLOBAL STYLES ========== */
@@ -200,6 +201,11 @@ footer {
   padding: 1rem;
 }
 
+#inv-display li {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
 .vehicle-detail, .vehicle-feat, .info-button{
   display: flex;
   gap: 10px;
@@ -309,6 +315,125 @@ footer {
   font-weight: bold;
 }
 
+.notice{
+  color: red;
+  font-style: italic;
+}
+
+.notice li{
+  margin-left: 15px;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: var(--color-nav-text);
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.form-container label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.form-container input, textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 0.4rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-nav-text);
+  font-size: 1rem;
+  color: var(--color-nav-bg);
+}
+
+input:focus{
+  outline: 2px solid #4a90e2;
+}
+
+input:required:invalid:focus{
+  border-color: red;
+  background-color: #ffebee; 
+}
+
+input:required:valid:focus{
+  border-color: green; 
+  background-color: #e8f5e9; 
+}
+
+.submit-btn{
+  display: flex;
+  justify-content: center;
+}
+
+#submit {
+  background: var(--color-brand-hover);
+  color: var(--color-nav-text);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 50px;
+}
+
+#submit:hover {
+  background: var(--color-brand);
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+.switch-link a {
+  color: var(--color-nav-text);
+}
+.switch-link a:hover {
+  text-decoration: underline;
+  color: var(--color-brand);
+}
+
+.form-container span{
+  font-style: italic;
+}
+
+.mng-btn{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.mng-btn li{
+  list-style: none;
+  background-color: var(--mng-color);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.mng-btn li a{
+  color: var(--color-nav-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mng-btn li a:hover{
+  text-decoration: underline;
+}
+
+select {
+  width: 200px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
 
 @media screen and (min-width: 600px){
 

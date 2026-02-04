@@ -1,0 +1,48 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<div class="form-container">
+    <form action="/account/register" method="post">
+               
+        <label for="accountFirstName">
+            First name:
+            <input type="text" id="accountFirstName" name="account_firstname" required value="<%= locals.account_firstname %>">
+        </label>
+
+        <label for="accountLastName">
+            Last name:
+            <input type="text" id="accountLastName" name="account_lastname" required value="<%= locals.account_lastname %>">
+        </label>
+
+        <label for="accountEmail">
+            Email address:
+            <input type="email" id="accountEmail" name="account_email" placeholder="Enter a valid email address" required value="<%= locals.account_email %>">
+        </label>
+
+        <label for="accountPassword">
+            Password:
+            <input type="password" id="accountPassword" name="account_password" minlength="12" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+        </label>
+        <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span> 
+
+        <div class="submit-btn">
+            <button id="submit">Register</button>
+        </div>
+    </form>
+    <div class="switch-link">
+        <p>Already have an account? <a href="/account/login">Log in instead</a></p>
+    </div>
+</div>

@@ -39,6 +39,118 @@ invCont.buildVehicleDetail = async function (req, res, next) {
   }
 }
 
+invCont.buildManagement = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("inventory/management", {
+    title: "Management",
+    nav,
+    errors: null,
+  })
+}
+
+/* ****************************************
+*  Deliver Classification view
+* *************************************** */
+invCont.buildAddClassification = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/add-classification", {
+    title: "Add New Classification",
+    nav,
+    errors: null,
+  })
+}
+
+invCont.addClassification= async function (req, res) {
+  let nav = await utilities.getNav()
+  const {classification_name} = req.body
+
+  const result = await invModel.addToClassification(classification_name)
+  
+  if (result) {
+    req.flash("notice", `Classification name ${classification_name} added successfully`)
+    res.redirect("/inv/")
+
+  } else {
+    req.flash("notice", "Failed to add new classification")
+    res.render("./inventory/add-classification", {
+      title: "Add Classification",
+      nav,
+      errors: null,
+    })
+  }
+}
+
+
+/* ****************************************
+*  Deliver Inventory view
+* *************************************** */
+invCont.buildAddInventory = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  let classificationList = await utilities.buildClassificationList()
+
+  res.render("./inventory/add-inventory", {
+    title: "Add New Inventory",
+    nav,
+    classificationList,
+    errors: null,
+  })
+}
+
+invCont.addInventory = async function (req, res) {
+  let nav = await utilities.getNav()
+  let classificationList = await utilities.buildClassificationList(
+    req.body.classification_id
+  )
+
+  try {
+    const {
+      classification_id,
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_description,
+      inv_image,
+      inv_thumbnail,
+      inv_price,
+      inv_miles,
+      inv_color
+    } = req.body
+
+    console.log(JSON.stringify(req.body))
+
+    const result = await invModel.addToInventory(
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_description,
+      inv_image,
+      inv_thumbnail,
+      inv_price,
+      inv_miles,
+      inv_color,
+      classification_id
+    )
+
+    if (result) {
+      req.flash("notice", "Item added successfully")
+      return res.redirect("/inv/")
+    }
+
+    throw new Error("Insert failed")
+
+  } catch (error) {
+    console.error("Controller addInventory error:", error)
+
+    res.render("inventory/add-inventory", {
+      title: "Add New Inventory",
+      nav,
+      classificationList,
+      errors: [{ msg: "Database error. Please try again." }],
+      ...req.body
+    })
+  }
+}
+
 invCont.errorTrigger = async function (req, res, next) {
   const err = new Error("Intentional 500 error for testing")
   err.status = 500
