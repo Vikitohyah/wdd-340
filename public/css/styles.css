@@ -52,16 +52,17 @@ h1, h2, h3 {
 
 }
 
-#top-header a {
+#top-header a,  #tools a{
   text-decoration: none;
   color: var(--color-brand);
   transition: background-color 0.3s;
 
 }
 
-#top-header a:hover, nav a:hover {
+#top-header a:hover, nav a:hover,  #tools a:hover {
   background-color: var(--color-brand-hover);
   padding: 5px;
+  color: var(--color-nav-text);
 }
 
 a.active {
@@ -75,10 +76,6 @@ a:active {
 
 #top-header .siteName {
   font-size: 2rem;
-}
-
-#top-header #tools a {
-  color: var(--color-brand-hover);
 }
 
 /* Navigation */
