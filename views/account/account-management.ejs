@@ -1,0 +1,43 @@
+<%# Content Heading %>
+
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+
+<div class="acc-mng">
+  <h2>Welcome <%= locals.accountData.account_firstname %></h2>
+  <p>You're logged in</p>
+</div>
+
+<!-- Update Account -->
+<ul class="mng-btn">
+  <li>
+    <a href="update-account/<%= locals.accountData.account_id %>">Update your account</a>
+  </li>
+</ul>
+
+<% if (locals.accountData.account_type === "Employee" || accountData.account_type === "Admin") { %>
+  <div class="inv-mng">
+    <h3>Inventory Management</h3>
+
+    <p class="inv-link">
+      <a href="../inv/">
+        Manage Inventory
+      </a>
+    </p>
+  </div>
+
+<% } %>

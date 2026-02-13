@@ -15,7 +15,7 @@
 <% } %>
 
 <div class="form-container">
-    <form action="/inv/add-inventory" method="post">
+    <form action="/inv/update" method="post" class="updateForm">
 
         <label for="classificationList">
             Classification:
@@ -68,8 +68,14 @@
         <textarea name="inv_description" id="inv_description" rows="3" placeholder="write your description here..." required><%= locals.inv_description %></textarea>
 
         <div class="submit-btn">
-            <button id="submit">Add</button>
+            <button id="submit" disabled>Update Vehicle</button>
+            <input type="hidden" name="inv_id"
+            <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+            <% } %>>
         </div>
 
     </form>
 </div>
+
+
+<script src="../../js/inv-update.js"></script>

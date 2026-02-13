@@ -1,0 +1,26 @@
+<%# Content Heading %>
+
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<div>
+    <form action="account/logout" method="post">
+        <p>Are you sure you want to logout?</p>
+        <div class="submit-btn">
+            <button id="submit">Logout</button>
+        </div>
+    </form>
+</div>

@@ -17,6 +17,7 @@ const session = require("express-session")
 const pool = require('./database/')
 const accountRoute = require("./routes/accountRoute")
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 /* ***********************
  * View Engine and Templates
@@ -43,6 +44,10 @@ app.set("layout", "./layouts/layout") // not at views root
   saveUninitialized: true,
   name: 'sessionId',
 }))
+
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
+
 
 // Express Messages Middleware
 app.use(require('connect-flash')())
