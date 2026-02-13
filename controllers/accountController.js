@@ -139,7 +139,7 @@ async function checkAccountType(req, res, next) {
 
   if (!accessToken) {
     req.flash("notice", "Please log in")
-    return res.render("/account/login")
+    return res.redirect("/account/login")
   }
   try {
     const authorizeAccount = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
@@ -147,14 +147,14 @@ async function checkAccountType(req, res, next) {
 
     if (authorizeAccount.account_type === "Employee" || authorizeAccount.account_type === "Admin")
     {
-      return next()
+      next()
     } else {
       req.flash("notice", "You are not authorized")
-      return res.render("/account/login")
+      res.redirect("/account/login")
     }
   } catch (error) {
     req.flash("notice", "You are not authorized")
-    return res.render("/account/login")
+    res.redirect("/account/login")
   }
 
 }
@@ -183,7 +183,11 @@ async function buildUpdateAccount(req, res, next) {
 * *************************************** */
 async function updateAccountProcess(req, res) {
   let nav = await utilities.getNav()
-  const { account_firstname, account_lastname, account_email, account_id } = req.body
+  const {
+    account_firstname,
+    account_lastname,
+    account_email,
+    account_id } = req.body
 
   const updateResult = await accountModel.updateAccountDb(
     account_firstname,

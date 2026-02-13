@@ -16,7 +16,10 @@ router.get("/detail/:invId", invController.buildVehicleDetail);
 router.get("/error-tester", utilities.handleErrors(invController.errorTrigger));
 
 // Route to build management
-router.get("/", utilities.handleErrors(invController.buildManagement));
+router.get(
+  "/",
+  accountController.checkAccountType,
+  utilities.handleErrors(invController.buildManagement));
 
 // Route to build Classification form
 router.get("/add-classification",
