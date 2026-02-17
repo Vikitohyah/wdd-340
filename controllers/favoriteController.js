@@ -45,7 +45,8 @@ async function addToFavorite(req, res, next) {
     req.flash("notice", "Sorry, Couldn't add to favorite.")
     return res.redirect("/account/", {
       title: "Add To Favorite",
-      nav
+      nav,
+      errors: null
     })
   }
   
@@ -65,7 +66,11 @@ async function removeFavorites(req, res, next) {
     
   } else {
     req.flash("notice", "Sorry, the delete failed.")
-    res.redirect("/account/favorites")
+    res.redirect("/account/favorites", {
+      title: "My Favorite Cars",
+      nav,
+      errors: null
+    })
   }
   
 }

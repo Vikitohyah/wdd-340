@@ -10,7 +10,7 @@ async function getFavoritesByAccount(account_id) {
       [account_id])
     return sql.rows
   } catch (error) {
-    return []
+    return new Error("No matching account found")
   }
 }
 
