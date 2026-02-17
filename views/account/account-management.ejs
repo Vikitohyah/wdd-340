@@ -18,18 +18,24 @@
 
 
 <div class="acc-mng">
-  <h2>Welcome <%= locals.accountData.account_firstname %></h2>
-  <p>You're logged in</p>
+  <div class="acc-head">
+    <h2>Welcome <%= locals.accountData.account_firstname %></h2>
+    <p>You're logged in</p>
+  </div>
+
+  <li>
+    <a href="/favorites">Your Favorites</a>
+  </li>
 </div>
 
 <!-- Update Account -->
 <ul class="mng-btn">
   <li>
-    <a href="update-account/<%= locals.accountData.account_id %>">Update your account</a>
+    <a href="update-account/">Update your account</a>
   </li>
 </ul>
 
-<% if (locals.accountData.account_type === "Employee" || accountData.account_type === "Admin") { %>
+<% if (locals.accountData.account_type === "Employee" || locals.accountData.account_type === "Admin") { %>
   <div class="inv-mng">
     <h3>Inventory Management</h3>
 

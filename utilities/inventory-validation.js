@@ -55,11 +55,11 @@ validate.InventoryRules = () => {
     
     // lastname is required and must be string
     body("inv_year")
-        .notEmpty()
-        .isInt({ min: 1900, max: new Date().getFullYear() + 1 })
-        .withMessage("Please provide a valid year."),
-    
-        // lastname is required and must be string
+      .notEmpty()
+      .isInt({ min: 1900, max: new Date().getFullYear() + 1 })
+      .withMessage("Please provide a valid year."),
+  
+    // lastname is required and must be string
     body("inv_description")
       .trim()
       .escape()
@@ -82,15 +82,15 @@ validate.InventoryRules = () => {
     
       // lastname is required and must be string
     body("inv_price")
-        .notEmpty()
-        .isFloat({ min: 0 })
-        .withMessage("Please provide a valid price."),
+      .notEmpty()
+      .isFloat({ min: 0 })
+      .withMessage("Please provide a valid price."),
    
     // lastname is required and must be string
     body("inv_miles")
-        .notEmpty()
-        .isInt({ min: 0 })
-        .withMessage("Please provide valid mileage."),
+      .notEmpty()
+      .isInt({ min: 0 })
+      .withMessage("Please provide valid mileage."),
     
     // lastname is required and must be string
     body("inv_color")

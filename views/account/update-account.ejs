@@ -22,17 +22,17 @@
                
         <label for="accountFirstName">
             First name:
-            <input type="text" id="accountFirstName" name="account_firstname" required value="<%= locals.account_firstname %>">
+            <input type="text" id="accountFirstName" name="account_firstname" required value="<%= locals.accountData.account_firstname %>">
         </label>
 
         <label for="accountLastName">
             Last name:
-            <input type="text" id="accountLastName" name="account_lastname" required value="<%= locals.account_lastname %>">
+            <input type="text" id="accountLastName" name="account_lastname" required value="<%= locals.accountData.account_lastname %>">
         </label>
 
         <label for="accountEmail">
             Email address:
-            <input type="email" id="accountEmail" name="account_email" placeholder="Enter a valid email address" required value="<%= locals.account_email %>">
+            <input type="email" id="accountEmail" name="account_email" placeholder="Enter a valid email address" required value="<%= locals.accountData.account_email %>">
         </label>
 
         <div class="submit-btn">

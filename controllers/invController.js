@@ -132,7 +132,7 @@ invCont.addInventory = async function (req, res) {
 
   if (result) {
     req.flash("notice", "Item added successfully")
-    return res.redirect("/inv/")
+    res.redirect("/inv/")
   }
 
   else {
@@ -233,7 +233,7 @@ invCont.updateInventory = async function (req, res) {
   if (updateResult) {
     const itemName = `${inv_make} ${inv_model}`
     req.flash("notice", `The ${itemName} was successfully updated.`)
-    return res.redirect("/inv/")
+    res.redirect("/inv/")
   }
 
   else {

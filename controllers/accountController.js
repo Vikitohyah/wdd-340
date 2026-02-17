@@ -139,7 +139,7 @@ async function checkAccountType(req, res, next) {
 
   if (!accessToken) {
     req.flash("notice", "Please log in")
-    return res.redirect("/account/login")
+    res.redirect("/account/login")
   }
   try {
     const authorizeAccount = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
@@ -163,7 +163,7 @@ async function checkAccountType(req, res, next) {
 *  Deliver Account Update view
 * *************************************** */
 async function buildUpdateAccount(req, res, next) {
-  const account_id = req.params.accountId
+  const account_id = res.locals.accountData.account_id
   let nav = await utilities.getNav()
   const accountData = await accountModel.getAccountById(account_id)
   console.log("Check:", account_id)
@@ -207,23 +207,6 @@ async function updateAccountProcess(req, res) {
       errors: null,
     })
   }
-}
-
-
-/* ****************************************
-*  Deliver Account Update view
-* *************************************** */
-async function buildUpdatePassword(req, res, next) {
-  let nav = await utilities.getNav()
-  let account_id = req.params.accountId
-  let accountData = await accountModel.getAccountById(account_id)
-  res.render("account/update-account", {
-    title: "Update Your Account",
-    nav,
-    errors: null,
-    account_id: accountData.account_id,
-    account_password: accountData.account_password
-  })
 }
 
 /* ****************************************
@@ -280,4 +263,4 @@ async function logOut(req, res, next) {
 }
 
 
-module.exports = { buildLogin, buildRegister, registerAccount, logInAccount, buildManagement, checkAccountType, buildUpdateAccount, updateAccountProcess, buildUpdatePassword, updatePassword, buildLogOutView, logOut}
+module.exports = { buildLogin, buildRegister, registerAccount, logInAccount, buildManagement, checkAccountType, buildUpdateAccount, updateAccountProcess, updatePassword, buildLogOutView, logOut}

@@ -158,6 +158,15 @@ Util.buildVehicleDetailPage = async function(vehicle){
         </div>
 
       </div>
+
+      <form action="/favorites/add" method="post">
+        <input type="hidden" name="inv_id" value="${vehicle.inv_id}">
+
+        <button type="submit" id="fav">
+          ❤️ Add to Favorites
+        </button>
+      </form>
+
     </section>
     `
   return detail

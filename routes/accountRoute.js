@@ -34,7 +34,9 @@ router.post(
 )
 
 // Process to build update Account
-router.get("/update-account/:accountId", utilities.handleErrors(accountController.buildUpdateAccount));
+router.get("/update-account",
+  utilities.checkLogin,
+  utilities.handleErrors(accountController.buildUpdateAccount));
 
 // Process updating account
 router.post("/update-info/",
@@ -42,9 +44,6 @@ router.post("/update-info/",
   Validate.checkAccountUpdate,
   utilities.handleErrors(accountController.updateAccountProcess)
 );
-
-// Process to build update password
-router.get("/update-account/:accountId", utilities.handleErrors(accountController.buildUpdatePassword));
 
 // Process updating password
 router.post("/update-password/",
