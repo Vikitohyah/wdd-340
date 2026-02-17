@@ -246,36 +246,6 @@ UPDATE public.inventory
 SET inv_image = REPLACE (inv_image, '/images', '/images/vehicles'),
     inv_thumbnail = REPLACE (inv_thumbnail, '/images', '/images/vehicles');
 
--- Data for table `account`
-INSERT INTO public.account (account_firstname, account_lastname, account_email, account_password)
-VALUES ('Basic'),
-	('Client'),
-	('basic@340.edu'),
-	('I@mABas1cCl!3nt');
-
--- Data for table `account`
-INSERT INTO public.account (account_firstname, account_lastname, account_email, account_password)
-VALUES ('Happy'),
-	('Employee'),
-	('happy@340.edu'),
-	('I@mAnEmpl0y33');
-
--- Data for table `account`
-INSERT INTO public.account (account_firstname, account_lastname, account_email, account_password)
-VALUES ('Manager'),
-	('User'),
-	('manager@340.edu'),
-	('I@mAnAdm!n1strat0r');
-
--- Data for table `account`
-UPDATE public.account
-SET account_type = 'Employee'
-WHERE account_firstname = 'Happy'
-
--- Data for table `account`
-UPDATE public.account
-SET account_type = 'Admin'
-WHERE account_lastname = 'User'
 
 -- Week 6 Table structure for table `favorites`
 CREATE TABLE IF NOT EXISTS public.favorites
